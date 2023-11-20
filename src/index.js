@@ -12,7 +12,7 @@ const setupAndStartServer= async()=>{
      app.listen(PORT,async()=>{
       console.log(`server started at ${PORT}`)
       const repo = new CityRepository();
-      await repo.CreateCity({name:"kanpur"})
+      await repo.CreateCity({name:"mumbai"})
     //   City.create({
     //       name:"delhi",
     //   }).then((data)=>{
@@ -21,7 +21,7 @@ const setupAndStartServer= async()=>{
     //       console.log(err)
     //   })
        
-    //   City.sync({ alter: true })
+     // City.sync({ alter: true })
 
      })
 }

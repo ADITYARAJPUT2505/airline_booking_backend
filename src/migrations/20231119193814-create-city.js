@@ -12,8 +12,7 @@ module.exports = {
       name: {
         type: Sequelize.STRING,
         allowNull:false,
-       unique : 'column',
-       collate: 'utf8_general_ci', 
+       unique : true 
       },
       createdAt: {
         allowNull: false,

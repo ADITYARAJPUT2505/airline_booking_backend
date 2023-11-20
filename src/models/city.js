@@ -19,8 +19,7 @@ module.exports = (sequelize, DataTypes) => {
     name: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique:'column',
-      collate: 'utf8_general_ci', 
+      unique:true 
     },
   }, {
     sequelize,
