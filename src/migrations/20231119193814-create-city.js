@@ -11,7 +11,9 @@ module.exports = {
       },
       name: {
         type: Sequelize.STRING,
-        allowNull:false
+        allowNull:false,
+       unique : 'column',
+       collate: 'utf8_general_ci', 
       },
       createdAt: {
         allowNull: false,
