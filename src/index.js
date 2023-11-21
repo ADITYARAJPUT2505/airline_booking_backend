@@ -1,38 +1,34 @@
-const express = require('express')
+const express = require("express");
 
-const bodyparser = require('body-parser')
+const bodyparser = require("body-parser");
 
-//const {City} = require('./models/index')
+const { City, Airport } = require("./models/index");
 
-const{PORT} = require('./config/server_config')
+const { PORT } = require("./config/server_config");
 
 //const CityRepository =require('./repository/city_repository')
 
-const ApiRoutes = require('./routes/index')
+const db = require("./models/index");
+const sequelize = require("sequelize");
+const city = require("./models/city");
 
-const setupAndStartServer= async()=>{
-     const app = express();
+const ApiRoutes = require("./routes/index");
 
-     app.use(bodyparser.json());
-     app.use(bodyparser.urlencoded({extended:true}));
+const setupAndStartServer = async () => {
+  const app = express();
 
-     app.use('/api',ApiRoutes)
-     
-     app.listen(PORT,async()=>{
-      console.log(`server started at ${PORT}`)
-     //  const repo = new CityRepository();
-     //  await repo.CreateCity({name:"mumbai"})
-    //   City.create({
-    //       name:"delhi",
-    //   }).then((data)=>{
-    //       console.log(data)
-    //   }).catch((err)=>{
-    //       console.log(err)
-    //   })
-       
-     // City.sync({ alter: true })
+  app.use(bodyparser.json());
+  app.use(bodyparser.urlencoded({ extended: true }));
 
-     })
-}
+  app.use("/api", ApiRoutes);
 
-setupAndStartServer() 
+  app.listen(PORT, async () => {
+    console.log(`server started at ${PORT}`);
+    if (process.env.SYNC_DB) {
+      db.sequelize.sync({ alter: true });
+    }
+    //     console.log(city, airport);
+  });
+};
+
+setupAndStartServer();
