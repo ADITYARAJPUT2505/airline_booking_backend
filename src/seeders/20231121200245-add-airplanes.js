@@ -12,8 +12,8 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
      */
-    await queryInterface.bulkInsert(
-      "Airplanes",
+    await queryInterface.bulkInsert;
+    "Airplanes",
       [
         {
           modelnumber: "Boeing 737",
@@ -46,8 +46,7 @@ module.exports = {
           updatedAt: new Date(),
         },
       ],
-      {}
-    );
+      {}();
   },
 
   async down(queryInterface, Sequelize) {

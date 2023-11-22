@@ -31,6 +31,24 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date(),
       },
+      {
+        name: "kanpur airport",
+        cityid: 3,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        name: "lucknow airport",
+        cityid: 15,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        name: "chennai airport",
+        cityid: 17,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
     ]);
   },
 
